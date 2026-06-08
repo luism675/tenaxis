@@ -1,0 +1,37 @@
+meta {
+  name: Notify Operator
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{local}}/ordenes-servicio/notifications/operator
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "telefonoOperador": "573004445566",
+    "numeroOrden": "OS-1024",
+    "cliente": "Juan Perez",
+    "servicio": "Control de plagas",
+    "programacion": "2026-03-20 14:00",
+    "tecnico": "Carlos Lopez",
+    "estado": "PENDIENTE",
+    "urgencia": "ALTA",
+    "direccion": "Calle Falsa 123",
+    "linkMaps": "https://maps.google.com/?q=4.7110,-74.0721",
+    "municipio": "Medellin",
+    "barrio": "Centro",
+    "detalles": "Llevar equipo completo",
+    "valorCotizado": "180000",
+    "metodosPago": "Transferencia, efectivo",
+    "observaciones": "Cliente prefiere contacto previo",
+    "idServicio": "{{ordenId}}"
+  }
+}

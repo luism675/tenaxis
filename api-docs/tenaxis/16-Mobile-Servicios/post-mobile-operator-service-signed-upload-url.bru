@@ -1,0 +1,22 @@
+meta {
+  name: Create Mobile Operator Service Signed Upload Url
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{local}}/mobile/operator/services/{{ordenServicioId}}/uploads/signed-url
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "kind": "serviceEvidence",
+    "fileName": "service-evidence-01.jpg"
+  }
+}

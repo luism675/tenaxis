@@ -1,0 +1,15 @@
+meta {
+  name: Get Proveedores
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{local}}/productos/proveedores
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Record Event
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{local}}/monitoring/event
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "tipo": "NAVIGATION",
+    "descripcion": "Ingreso a dashboard de monitoreo",
+    "ruta": "/dashboard/monitoreo"
+  }
+}

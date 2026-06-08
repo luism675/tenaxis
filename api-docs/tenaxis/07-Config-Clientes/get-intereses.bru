@@ -1,0 +1,15 @@
+meta {
+  name: Get Intereses
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{local}}/config-clientes/intereses
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

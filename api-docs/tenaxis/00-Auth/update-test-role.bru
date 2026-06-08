@@ -1,0 +1,21 @@
+meta {
+  name: Update Test Role
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{local}}/auth/test-role
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "role": "ADMIN"
+  }
+}

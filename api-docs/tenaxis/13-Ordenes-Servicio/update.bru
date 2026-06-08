@@ -1,0 +1,31 @@
+meta {
+  name: Update Orden Servicio
+  type: http
+  seq: 14
+}
+
+patch {
+  url: {{local}}/ordenes-servicio/{{ordenId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "observacionFinal": "Servicio completado satisfactoriamente",
+    "estadoServicio": "COMPLETADO",
+    "estadoPago": "PAGADO",
+    "valorPagado": 180000,
+    "referenciaPago": "TRX-987654",
+    "desglosePago": [
+      {
+        "metodo": "TRANSFERENCIA",
+        "valor": 180000
+      }
+    ]
+  }
+}

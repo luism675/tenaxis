@@ -1,0 +1,30 @@
+meta {
+  name: Complete Follow Up
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{local}}/ordenes-servicio/follow-ups/:id/complete
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: {{seguimientoId}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "contactedAt": "2026-03-19T14:00:00.000Z",
+    "channel": "WHATSAPP",
+    "outcome": "Cliente confirma visita",
+    "resolution": "ACEPTADO",
+    "notes": "Programado para manana",
+    "nextActionAt": "2026-03-20T13:00:00.000Z"
+  }
+}

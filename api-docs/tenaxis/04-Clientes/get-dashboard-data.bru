@@ -1,0 +1,15 @@
+meta {
+  name: Get Dashboard Data
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{local}}/clientes/dashboard-data
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

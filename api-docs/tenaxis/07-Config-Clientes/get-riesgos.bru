@@ -1,0 +1,15 @@
+meta {
+  name: Get Riesgos
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/config-clientes/riesgos
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

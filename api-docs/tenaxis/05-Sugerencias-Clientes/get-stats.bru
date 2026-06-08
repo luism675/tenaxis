@@ -1,0 +1,15 @@
+meta {
+  name: Get Suggestion Stats
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/sugerencias-clientes/stats
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

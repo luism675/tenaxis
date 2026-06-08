@@ -1,0 +1,15 @@
+meta {
+  name: Get Tipos Servicio
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{local}}/config-clientes/tipos-servicio?empresaId={{enterpriseId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Create Solicitud
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{local}}/productos/solicitudes
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "productoId": "{{productoId}}",
+    "cantidad": "2",
+    "unidadMedida": "caja",
+    "membershipId": "{{membershipId}}"
+  }
+}

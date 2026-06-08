@@ -1,0 +1,238 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: var(--font-jakarta);
+  --font-mono: var(--font-geist-mono);
+
+  /* Registrar colores para que Tailwind permita usar /opacidad */
+  --color-base: var(--color-base);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-theme: var(--color-border);
+  --color-surface: var(--color-app-surface);
+
+  /* Nueva Paleta de Colores */
+  --color-azul-1: var(--color-azul-1);
+  --color-vivido-purpura-2: var(--color-vivido-purpura-2);
+  --color-oscuro-verde-azulado-3: var(--color-oscuro-verde-azulado-3);
+  --color-claro-azul-4: var(--color-claro-azul-4);
+  --color-violeta-5: var(--color-violeta-5);
+}
+
+:root {
+  /* Paleta de Colores Solicitada - Light Mode */
+  --color-base: #F8FAFC;      /* Blanco suave / Softer White */
+  --color-primary: #021359;   /* Azul Profundo / Deep Dark Blue */
+  --color-secondary: #706F71; /* Gris / Muted Gray */
+  --color-accent: #01ADFB;    /* Azul Brillante / Bright Blue */
+  --color-text-main: #000000; /* Negro */
+  --color-text-secondary: #706F71;
+  --color-border: #E2E8F0;
+  --color-app-surface: #FFFFFF;
+
+  /* Nueva Paleta de Colores (Mapeo) */
+  --color-azul-1: #01ADFB;
+  --color-vivido-purpura-2: #021359;
+  --color-oscuro-verde-azulado-3: #706F71;
+  --color-claro-azul-4: #CBD5E1;
+  --color-violeta-5: #706F71;
+
+  --radius: 0.75rem;
+
+  /* Shadcn Variables - Light Mode */
+  --background: #F8FAFC;
+  --foreground: #020617;
+  --card: #FFFFFF;
+  --card-foreground: #020617;
+  --popover: #FFFFFF;
+  --popover-foreground: #020617;
+  --primary: #021359;
+  --primary-foreground: #F8FAFC;
+  --secondary: #F1F5F9;
+  --secondary-foreground: #0F172A;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #F1F5F9;
+  --accent-foreground: #0F172A;
+  --destructive: #EF4444;
+  --destructive-foreground: #F8FAFC;
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #021359;
+
+  --chart-1: #E76E50;
+  --chart-2: #2A9D8F;
+  --chart-3: #264653;
+  --chart-4: #E9C46A;
+  --chart-5: #F4A261;
+}
+
+.dark {
+  /* Paleta de Colores Solicitada - Dark Mode */
+  --color-base: #020617;      /* Casi negro / Slate 950 */
+  --color-primary: #F8FAFC; 
+  --color-secondary: #94A3B8; /* Slate 400 */
+  --color-accent: #01ADFB;
+  --color-text-main: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+  --color-border: #1E293B;    /* Slate 800 */
+  --color-app-surface: #0F172A;     /* Slate 900 */
+
+  /* Shadcn Variables - Dark Mode */
+  --background: #020617;
+  --foreground: #F8FAFC;
+  --card: #0F172A;
+  --card-foreground: #F8FAFC;
+  --popover: #0F172A;
+  --popover-foreground: #F8FAFC;
+  --primary: #F8FAFC;
+  --primary-foreground: #021359;
+  --secondary: #1E293B;
+  --secondary-foreground: #F8FAFC;
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+  --accent: #1E293B;
+  --accent-foreground: #F8FAFC;
+  --destructive: #7F1D1D;
+  --destructive-foreground: #F8FAFC;
+  --border: #1E293B;
+  --input: #1E293B;
+  --ring: #CBD5E1;
+
+  --sidebar: #020617;
+  --sidebar-foreground: #F8FAFC;
+  --sidebar-primary: #01ADFB;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1E293B;
+  --sidebar-accent-foreground: #F8FAFC;
+  --sidebar-border: #1E293B;
+  --sidebar-ring: #01ADFB;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  }
+  .maplibregl-popup-content {
+    @apply bg-transparent! shadow-none! p-0! rounded-none!;
+  }
+  .maplibregl-popup-tip {
+    @apply hidden!;
+  }
+}
+
+/* Custom utilities based on palette */
+.bg-base { background-color: var(--color-base); }
+.bg-surface { background-color: var(--color-app-surface); }
+
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-accent { color: var(--color-accent); }
+.text-body { color: var(--color-text-main); }
+.text-muted { color: var(--color-text-secondary); }
+.text-base-color { color: var(--color-base); }
+
+.border-theme { border-color: var(--color-border); }
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
+
+.auth-grid {
+  background-image:
+    linear-gradient(rgba(2, 19, 89, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(2, 19, 89, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at center, black 38%, transparent 86%);
+}
+
+.dark .auth-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+}
+
+.auth-noise {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.08) 0, transparent 26%),
+    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.08) 0, transparent 28%),
+    radial-gradient(circle at 50% 80%, rgba(14, 165, 233, 0.08) 0, transparent 32%);
+}

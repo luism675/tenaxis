@@ -1,0 +1,33 @@
+meta {
+  name: Get Kpis
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{local}}/ordenes-servicio/kpis
+  body: none
+  auth: bearer
+}
+
+params:query {
+  empresaId: {{enterpriseId}}
+  clienteId: {{clienteId}}
+  search: juan
+  estado: PENDIENTE
+  tecnicoId: {{membershipId}}
+  creadorId: {{membershipId}}
+  urgencia: ALTA
+  municipio: Bogota
+  metodoPagoId: {{metodoPagoId}}
+  tipoVisita: PROGRAMADA
+  fechaInicio: 2026-03-01
+  fechaFin: 2026-03-31
+  preset: SEMANA
+  page: 1
+  limit: 20
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Delete Servicio
+  type: http
+  seq: 12
+}
+
+delete {
+  url: {{local}}/config-clientes/servicios/{{servicioId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

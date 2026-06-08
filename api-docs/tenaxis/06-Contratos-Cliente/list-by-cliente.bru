@@ -1,0 +1,15 @@
+meta {
+  name: List Contratos By Cliente
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/clientes/{{clienteId}}/contratos
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

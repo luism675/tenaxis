@@ -1,0 +1,15 @@
+meta {
+  name: Delete Enterprise
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{local}}/enterprise/{{enterpriseId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

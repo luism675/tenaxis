@@ -1,0 +1,15 @@
+meta {
+  name: Trigger Reinforcements Job
+  type: http
+  seq: 16
+}
+
+post {
+  url: {{local}}/ordenes-servicio/trigger-reinforcements-job
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

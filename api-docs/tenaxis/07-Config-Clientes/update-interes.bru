@@ -1,0 +1,22 @@
+meta {
+  name: Update Interes
+  type: http
+  seq: 8
+}
+
+patch {
+  url: {{local}}/config-clientes/intereses/{{tipoInteresId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "nombre": "Control de roedores premium",
+    "activo": true
+  }
+}

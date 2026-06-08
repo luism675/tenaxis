@@ -1,0 +1,28 @@
+meta {
+  name: Confirm Upload
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{local}}/ordenes-servicio/:id/uploads/confirm
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: {{ordenId}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "kind": "evidencias",
+    "paths": [
+      "{{tenantId}}/ordenes-servicio/evidencia-orden.jpg"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Delete Dashboard Preset
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/dashboard-presets/{{dashboardPresetId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

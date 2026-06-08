@@ -1,0 +1,20 @@
+meta {
+  name: Get Follow Up Overrides
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{local}}/ordenes-servicio/follow-up-overrides
+  body: none
+  auth: bearer
+}
+
+params:query {
+  empresaId: {{enterpriseId}}
+  membershipId: {{membershipId}}
+}
+
+auth:bearer {
+  token: {{token}}
+}

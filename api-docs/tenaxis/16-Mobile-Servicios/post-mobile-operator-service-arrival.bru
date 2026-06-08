@@ -1,0 +1,25 @@
+meta {
+  name: Post Mobile Operator Service Arrival
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{local}}/mobile/operator/services/{{ordenServicioId}}/arrival
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "fotoLlegadaPath": "{{arrivalPhotoPath}}",
+    "latitud": 4.711,
+    "longitud": -74.0721,
+    "linkMaps": "https://maps.google.com/?q=4.711,-74.0721",
+    "occurredAt": "2026-04-11T09:10:00.000Z"
+  }
+}

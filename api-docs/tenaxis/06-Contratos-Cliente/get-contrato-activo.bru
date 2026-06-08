@@ -1,0 +1,15 @@
+meta {
+  name: Get Active Contrato
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/clientes/{{clienteId}}/contrato-activo?empresaId={{enterpriseId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

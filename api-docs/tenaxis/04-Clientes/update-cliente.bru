@@ -1,0 +1,23 @@
+meta {
+  name: Update Cliente
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{local}}/clientes/{{clienteId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "telefono": "3001112233",
+    "correo": "juan.actualizado@example.com",
+    "aceptaMarketing": false
+  }
+}

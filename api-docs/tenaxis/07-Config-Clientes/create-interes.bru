@@ -1,0 +1,25 @@
+meta {
+  name: Create Interes
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{local}}/config-clientes/intereses
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "nombre": "Control de roedores",
+    "descripcion": "Clientes con interes en control preventivo",
+    "frecuenciaSugerida": 30,
+    "riesgoSugerido": "MEDIO",
+    "activo": true
+  }
+}

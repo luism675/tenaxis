@@ -1,0 +1,22 @@
+meta {
+  name: Update Contrato
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{local}}/clientes/contratos/{{contratoId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "frecuenciaServicio": 45,
+    "observaciones": "Ajuste de frecuencia por temporada"
+  }
+}

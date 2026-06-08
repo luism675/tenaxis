@@ -1,0 +1,15 @@
+meta {
+  name: Get Mobile Operator Products
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{local}}/mobile/operator/products
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Get All Clientes
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/clientes/list
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Send Liquidation Reminder
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{local}}/finanzas/recaudo-tecnicos/{{membershipId}}/recordatorio-liquidacion
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "empresaId": "{{enterpriseId}}"
+  }
+}

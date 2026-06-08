@@ -1,0 +1,21 @@
+meta {
+  name: Heartbeat
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{local}}/monitoring/heartbeat
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "inactiveMinutes": 2
+  }
+}

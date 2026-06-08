@@ -1,0 +1,23 @@
+meta {
+  name: Register
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/auth/register
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "test@example.com",
+    "password": "password123",
+    "nombre": "Test",
+    "apellido": "User",
+    "telefono": "3001234567",
+    "tipoDocumento": "CC",
+    "numeroDocumento": "12345678"
+  }
+}

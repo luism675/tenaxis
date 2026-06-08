@@ -1,0 +1,26 @@
+meta {
+  name: Create Servicio
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{local}}/config-clientes/servicios
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "nombre": "Fumigacion general",
+    "empresaId": "{{enterpriseId}}",
+    "activo": true,
+    "requiereSeguimiento": true,
+    "primerSeguimientoDias": 10,
+    "requiereSeguimientoTresMeses": true
+  }
+}

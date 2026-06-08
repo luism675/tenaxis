@@ -1,0 +1,15 @@
+meta {
+  name: Get Pending Memberships
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/tenants/{{tenantId}}/pending-memberships
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

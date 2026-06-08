@@ -1,0 +1,15 @@
+meta {
+  name: Get Nominas
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{local}}/finanzas/nominas?empresaId={{enterpriseId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

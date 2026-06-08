@@ -1,0 +1,15 @@
+meta {
+  name: Get Mobile Operator Referrals Stats
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/mobile/operator/referrals/stats
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

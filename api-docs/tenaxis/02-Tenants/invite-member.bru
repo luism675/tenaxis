@@ -1,0 +1,25 @@
+meta {
+  name: Invite Member
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{local}}/tenants/{{tenantId}}/memberships
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "email": "operador@practicantes.com",
+    "role": "OPERADOR",
+    "nombre": "Camila",
+    "apellido": "Lopez",
+    "telefono": "3005557788"
+  }
+}

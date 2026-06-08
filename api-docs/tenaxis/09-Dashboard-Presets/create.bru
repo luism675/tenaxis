@@ -1,0 +1,28 @@
+meta {
+  name: Create Dashboard Preset
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{local}}/dashboard-presets
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "module": "SERVICIOS",
+    "name": "Servicios de hoy",
+    "colorToken": "emerald",
+    "isShared": true,
+    "filters": {
+      "preset": "HOY",
+      "estado": "PENDIENTE"
+    }
+  }
+}

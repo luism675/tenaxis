@@ -1,0 +1,26 @@
+meta {
+  name: Update Dashboard Preset
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{local}}/dashboard-presets/{{dashboardPresetId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": "Servicios urgentes",
+    "colorToken": "red",
+    "isShared": false,
+    "filters": {
+      "urgencia": "ALTA"
+    }
+  }
+}

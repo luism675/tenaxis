@@ -1,0 +1,23 @@
+meta {
+  name: Update Servicio
+  type: http
+  seq: 11
+}
+
+patch {
+  url: {{local}}/config-clientes/servicios/{{servicioId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "nombre": "Fumigacion general premium",
+    "requiereSeguimiento": true,
+    "primerSeguimientoDias": 12
+  }
+}

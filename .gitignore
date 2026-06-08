@@ -1,0 +1,34 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+.engram
+.agent
+docs/
+.agents
+openspec/
+
+# Environment variables
+.env*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# General
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific
+.gemini/
+tmp/
+.turbo/
+.next/
+dist/
+out/
+build/

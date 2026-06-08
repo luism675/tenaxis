@@ -1,0 +1,15 @@
+meta {
+  name: Get Ordenes Servicio
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{local}}/ordenes-servicio?empresaId={{enterpriseId}}&clienteId={{clienteId}}&search=juan&estado=PENDIENTE&tecnicoId={{membershipId}}&creadorId={{membershipId}}&urgencia=ALTA&municipio=Bogota&metodoPagoId={{metodoPagoId}}&tipoVisita=PROGRAMADA&fechaInicio=2026-03-01&fechaFin=2026-03-31&preset=HOY&page=1&limit=20
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

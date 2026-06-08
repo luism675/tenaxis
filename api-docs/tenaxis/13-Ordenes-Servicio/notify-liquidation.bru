@@ -1,0 +1,25 @@
+meta {
+  name: Notify Liquidation
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{local}}/ordenes-servicio/notifications/liquidation
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "telefono": "573001112233",
+    "cliente": "Juan Perez",
+    "fecha": "2026-03-19",
+    "servicio": "Control de plagas",
+    "idServicio": "{{ordenId}}"
+  }
+}

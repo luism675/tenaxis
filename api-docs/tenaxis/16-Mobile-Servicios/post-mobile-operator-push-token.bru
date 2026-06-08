@@ -1,0 +1,25 @@
+meta {
+  name: Post Mobile Operator Push Token
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{local}}/mobile/operator/push-token
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "pushToken": "{{expoPushToken}}"
+  }
+}
+
+vars:pre-request {
+  expoPushToken: ExponentPushToken[UrzU0pFgpQk_PWTY1DPDeN]
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Get Estados Servicio
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{local}}/config-clientes/estados-servicio?empresaId={{enterpriseId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

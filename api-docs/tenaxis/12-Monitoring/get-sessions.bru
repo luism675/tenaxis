@@ -1,0 +1,15 @@
+meta {
+  name: Get Sessions
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/monitoring/sessions?page=1&limit=20&date=2026-03-19
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

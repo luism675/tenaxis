@@ -1,0 +1,23 @@
+meta {
+  name: Create Mobile Operator Product Request
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{local}}/mobile/operator/product-requests
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "productoId": "{{productoId}}",
+    "cantidad": "2",
+    "unidadMedida": "UND"
+  }
+}

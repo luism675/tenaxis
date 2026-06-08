@@ -1,0 +1,23 @@
+meta {
+  name: Add Evidencias
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{local}}/ordenes-servicio/:id/evidencias
+  body: multipartForm
+  auth: bearer
+}
+
+params:path {
+  id: {{ordenId}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  files: @file(C:\Temp\bruno\evidencia-orden.jpg)
+}

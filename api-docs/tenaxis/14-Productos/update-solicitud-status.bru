@@ -1,0 +1,21 @@
+meta {
+  name: Update Solicitud Status
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{local}}/productos/solicitudes/{{solicitudProductoId}}/status
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "estado": "ACEPTADA"
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Reject Membership
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{local}}/tenants/memberships/{{membershipId}}/reject
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

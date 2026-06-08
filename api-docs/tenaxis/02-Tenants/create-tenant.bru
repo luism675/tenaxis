@@ -1,0 +1,32 @@
+meta {
+  name: Create Tenant
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/tenants
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "nombre": "Practicantes",
+    "slug": "practicantes-tenant",
+    "correo": "info@practicantes.com",
+    "nit": "900.008.888-1",
+    "numero": "6011234567",
+    "pagina": "https://practicantes.com",
+    "ownerEmail": "admin@nuevo-tenant.com",
+    "ownerPassword": "password123",
+    "ownerNombre": "Admin",
+    "ownerApellido": "Principal",
+    "planId": "{{planId}}",
+    "durationDays": 30
+  }
+}

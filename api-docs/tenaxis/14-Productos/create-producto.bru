@@ -1,0 +1,31 @@
+meta {
+  name: Create Producto
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{local}}/productos/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "nombre": "Guantes de nitrilo",
+    "descripcion": "Caja de 100 unidades",
+    "categoria": "INSUMOS",
+    "unidadMedida": "caja",
+    "precio": 35000,
+    "moneda": "COP",
+    "stockActual": 25,
+    "stockMinimo": 10,
+    "tiempoReposicion": 7,
+    "proveedorId": "{{proveedorId}}",
+    "activo": true
+  }
+}

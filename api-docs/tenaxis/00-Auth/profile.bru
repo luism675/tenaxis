@@ -1,0 +1,20 @@
+meta {
+  name: Get Profile
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{local}}/auth/profile
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-enterprise-id: {{enterpriseId}}
+  x-test-role: ADMIN
+}
+
+auth:bearer {
+  token: {{token}}
+}

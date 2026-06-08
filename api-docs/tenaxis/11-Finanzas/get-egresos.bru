@@ -1,0 +1,15 @@
+meta {
+  name: Get Egresos
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{local}}/finanzas/egresos?empresaId={{enterpriseId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

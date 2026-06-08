@@ -1,0 +1,28 @@
+meta {
+  name: Generate Payroll From Monitoring
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{local}}/finanzas/nominas/generar-desde-monitoreo
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "empresaId": "{{enterpriseId}}",
+    "fechaInicio": "2026-03-01",
+    "fechaFin": "2026-03-15",
+    "membershipIds": [
+      "{{membershipId}}"
+    ],
+    "includeAllEligible": false,
+    "observaciones": "Corte quincenal"
+  }
+}

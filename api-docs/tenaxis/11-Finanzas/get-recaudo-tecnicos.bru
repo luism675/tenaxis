@@ -1,0 +1,15 @@
+meta {
+  name: Get Recaudo Tecnicos
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/finanzas/recaudo-tecnicos?empresaId={{enterpriseId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Create Follow Up Override
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{local}}/ordenes-servicio/follow-up-overrides?empresaId={{enterpriseId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "membershipId": "{{membershipId}}",
+    "startsAt": "2026-03-20T08:00:00.000Z",
+    "endsAt": "2026-03-20T18:00:00.000Z",
+    "reason": "Cobertura especial"
+  }
+}

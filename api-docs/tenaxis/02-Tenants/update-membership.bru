@@ -1,0 +1,38 @@
+meta {
+  name: Update Membership
+  type: http
+  seq: 12
+}
+
+patch {
+  url: {{local}}/tenants/memberships/{{membershipId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "role": "OPERADOR",
+    "activo": true,
+    "nombre": "Camila",
+    "apellido": "Lopez",
+    "email": "operador@practicantes.com",
+    "telefono": "3005557788",
+    "placa": "ABC12D",
+    "moto": true,
+    "direccion": "Calle 10 # 20-30",
+    "municipioId": "{{municipioId}}",
+    "banco": "Bancolombia",
+    "tipoCuenta": "AHORROS",
+    "numeroCuenta": "1234567890",
+    "valorHora": 18000,
+    "cuentaPagoEmpresaId": "{{enterpriseId}}",
+    "empresaIds": [
+      "{{enterpriseId}}"
+    ]
+  }
+}

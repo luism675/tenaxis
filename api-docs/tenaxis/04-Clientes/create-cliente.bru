@@ -1,0 +1,68 @@
+meta {
+  name: Create Cliente
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{local}}/clientes/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "tipoCliente": "PERSONA",
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "telefono": "3001234567",
+    "telefono2": "3015558899",
+    "correo": "juan.perez@example.com",
+    "origenCliente": "REFERIDO",
+    "tipoInteresId": "{{tipoInteresId}}",
+    "actividadEconomica": "Restaurante",
+    "metrajeTotal": 120,
+    "segmento": "PYME",
+    "subsegmento": "ALIMENTOS",
+    "nivelRiesgo": "MEDIO",
+    "aceptaMarketing": true,
+    "empresaId": "{{enterpriseId}}",
+    "direcciones": [
+      {
+        "nombreSede": "Principal",
+        "direccion": "Calle Falsa 123",
+        "barrio": "Centro",
+        "municipio": "Medellin",
+        "municipioId": "{{municipioId}}",
+        "tipoUbicacion": "SEDE",
+        "clasificacionPunto": "URBANO",
+        "horarioInicio": "08:00",
+        "horarioFin": "18:00",
+        "restricciones": "Anunciar llegada en porteria",
+        "latitud": null,
+        "longitud": null,
+        "precisionGPS": null,
+        "validadoPorSistema": false,
+        "linkMaps": "",
+        "nombreContacto": "Juan Perez",
+        "telefonoContacto": "3001234567",
+        "cargoContacto": "Administrador",
+        "activa": true,
+        "bloqueada": false
+      }
+    ],
+    "vehiculos": [
+      {
+        "placa": "ABC123",
+        "marca": "Toyota",
+        "modelo": "Corolla",
+        "color": "Blanco",
+        "tipo": "Sedan"
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+meta {
+  name: Post Mobile Operator Service Finish
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{local}}/mobile/operator/services/{{ordenServicioId}}/finish
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "fotoSalidaPath": "{{exitPhotoPath}}",
+    "serviceEvidencePaths": [
+      "{{serviceEvidencePath1}}",
+      "{{serviceEvidencePath2}}"
+    ],
+    "metodoPagoId": "{{metodoPagoId}}",
+    "facturaSolicitada": true,
+    "invoiceType": "electronic",
+    "comprobantePago": "{{paymentReceiptPath}}",
+    "montoPagado": 120000,
+    "referenciaPago": "TRX-9981",
+    "fechaPago": "2026-04-11T11:30:00.000Z",
+    "observacionFinal": "Servicio finalizado sin novedades",
+    "intervencionRealizada": "Aplicación de tratamiento y control perimetral",
+    "desglosePago": [
+      {
+        "metodo": "TRANSFERENCIA",
+        "monto": 120000,
+        "referencia": "TRX-9981"
+      }
+    ],
+    "latitud": 4.711,
+    "longitud": -74.0721,
+    "occurredAt": "2026-04-11T11:40:00.000Z"
+  }
+}

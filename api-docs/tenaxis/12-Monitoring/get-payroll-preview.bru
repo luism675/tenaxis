@@ -1,0 +1,15 @@
+meta {
+  name: Get Payroll Preview
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{local}}/monitoring/payroll-preview?page=1&limit=20&startDate=2026-03-01&endDate=2026-03-15
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

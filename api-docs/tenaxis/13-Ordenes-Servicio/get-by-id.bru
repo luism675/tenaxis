@@ -1,0 +1,15 @@
+meta {
+  name: Get Orden Servicio By Id
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{local}}/ordenes-servicio/{{ordenId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

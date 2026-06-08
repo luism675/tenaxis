@@ -1,0 +1,15 @@
+meta {
+  name: Get Stock
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/productos/stock
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

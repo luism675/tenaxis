@@ -1,0 +1,15 @@
+meta {
+  name: Get Operators By Enterprise
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{local}}/enterprise/{{enterpriseId}}/operators
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

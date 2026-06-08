@@ -1,0 +1,34 @@
+meta {
+  name: Upsert Operativa Config
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{local}}/config-clientes/operativa
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "clienteId": "{{clienteId}}",
+    "empresaId": "{{enterpriseId}}",
+    "direccionId": "{{direccionId}}",
+    "protocoloServicio": "Aplicar protocolo estandar de control integrado",
+    "observacionesFijas": "Solicitar ingreso por porteria",
+    "requiereFirmaDigital": true,
+    "requiereFotosEvidencia": true,
+    "duracionEstimada": 90,
+    "frecuenciaSugerida": 30,
+    "elementosPredefinidos": [
+      "linterna",
+      "cebo",
+      "aspersor"
+    ]
+  }
+}

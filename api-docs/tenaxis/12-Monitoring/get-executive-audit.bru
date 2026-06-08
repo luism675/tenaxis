@@ -1,0 +1,15 @@
+meta {
+  name: Get Executive Audit
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/monitoring/executive-audit?page=1&limit=20&date=2026-03-19
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

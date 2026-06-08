@@ -1,0 +1,26 @@
+meta {
+  name: Registrar Egreso
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{local}}/finanzas/registrar-egreso
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "titulo": "Compra de insumos",
+    "monto": 250000,
+    "razon": "Reposicion de inventario",
+    "categoria": "OPERACION",
+    "membershipId": "{{membershipId}}",
+    "empresaId": "{{enterpriseId}}"
+  }
+}

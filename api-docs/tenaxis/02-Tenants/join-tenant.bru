@@ -1,0 +1,21 @@
+meta {
+  name: Join Tenant
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{local}}/tenants/join
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "slug": "practicantes-tenant"
+  }
+}

@@ -1,0 +1,22 @@
+meta {
+  name: Update Enterprise
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{local}}/enterprise/{{enterpriseId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "nombre": "Control de Plagas Centro",
+    "activo": true
+  }
+}

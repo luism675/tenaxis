@@ -1,0 +1,26 @@
+meta {
+  name: Create Signed Upload Url
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{local}}/ordenes-servicio/:id/uploads/signed-url
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: {{ordenId}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "kind": "evidencias",
+    "fileName": "evidencia-orden.jpg"
+  }
+}

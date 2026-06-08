@@ -1,0 +1,15 @@
+meta {
+  name: Get Member Logs
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{local}}/monitoring/logs/{{membershipId}}?page=1&limit=20&startDate=2026-03-01&endDate=2026-03-19
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

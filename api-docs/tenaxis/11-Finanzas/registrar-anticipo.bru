@@ -1,0 +1,24 @@
+meta {
+  name: Registrar Anticipo
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{local}}/finanzas/registrar-anticipo
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "membershipId": "{{membershipId}}",
+    "monto": 120000,
+    "razon": "Anticipo de movilidad",
+    "empresaId": "{{enterpriseId}}"
+  }
+}

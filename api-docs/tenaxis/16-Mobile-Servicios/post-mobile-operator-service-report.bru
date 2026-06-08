@@ -1,0 +1,30 @@
+meta {
+  name: Post Mobile Operator Service Report
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{local}}/mobile/operator/services/{{ordenServicioId}}/report
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "tipo": "CLIENTE_AUSENTE",
+    "estadoDestino": "REPROGRAMADO",
+    "motivo": "Cliente ausente en la visita; portería confirmó que no hubo atención",
+    "evidenciaPaths": [
+      "{{reportEvidencePathFromSignedUpload}}"
+    ],
+    "latitud": 4.711,
+    "longitud": -74.0721,
+    "linkMaps": "https://maps.google.com/?q=4.711,-74.0721",
+    "occurredAt": "2026-04-11T09:25:00.000Z"
+  }
+}

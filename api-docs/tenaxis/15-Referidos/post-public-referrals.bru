@@ -1,0 +1,20 @@
+meta {
+  name: Create Public Referral
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{local}}/public/referrals
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "code": "ABC12345",
+    "nombre": "María",
+    "apellido": "Gómez",
+    "telefono": "3001234567"
+  }
+}

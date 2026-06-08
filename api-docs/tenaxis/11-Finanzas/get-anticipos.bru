@@ -1,0 +1,15 @@
+meta {
+  name: Get Anticipos
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/finanzas/anticipos?empresaId={{enterpriseId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

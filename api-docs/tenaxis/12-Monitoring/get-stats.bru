@@ -1,0 +1,15 @@
+meta {
+  name: Get Monitoring Stats
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/monitoring/stats?page=1&limit=20&startDate=2026-03-01&endDate=2026-03-19
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

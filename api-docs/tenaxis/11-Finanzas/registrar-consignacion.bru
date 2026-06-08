@@ -1,0 +1,30 @@
+meta {
+  name: Registrar Consignacion
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{local}}/finanzas/registrar-consignacion
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "tecnicoId": "{{membershipId}}",
+    "empresaId": "{{enterpriseId}}",
+    "valorConsignado": 185000,
+    "referenciaBanco": "TRX-20260319-001",
+    "comprobantePath": "{{tenantId}}/finanzas/comprobantes/comprobante-consignacion.jpg",
+    "ordenIds": [
+      "{{ordenId}}"
+    ],
+    "fechaConsignacion": "2026-03-19",
+    "observacion": "Consignacion parcial del recaudo"
+  }
+}

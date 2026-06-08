@@ -1,0 +1,68 @@
+meta {
+  name: Create Orden Servicio
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/ordenes-servicio
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "clienteId": "{{clienteId}}",
+    "empresaId": "{{enterpriseId}}",
+    "direccionId": "{{direccionId}}",
+    "tecnicoId": "{{membershipId}}",
+    "direccionTexto": "Calle 50 # 20-30",
+    "servicioEspecifico": "Control integral de plagas",
+    "serviciosSeleccionados": [
+      "Desratizacion",
+      "Desinsectacion"
+    ],
+    "servicioId": "{{servicioId}}",
+    "observacion": "Cliente solicita visita en la manana",
+    "diagnosticoTecnico": "Presencia de roedores en cocina",
+    "intervencionRealizada": "Instalacion de estaciones y aplicacion de producto",
+    "hallazgosEstructurales": "Grietas en ducto",
+    "recomendacionesObligatorias": "Sellar accesos",
+    "huboSellamiento": false,
+    "huboRecomendacionEstructural": true,
+    "nivelInfestacion": "MEDIA",
+    "urgencia": "ALTA",
+    "tipoVisita": "PROGRAMADA",
+    "frecuenciaSugerida": 30,
+    "tipoFacturacion": "CONTADO",
+    "valorCotizado": 180000,
+    "metodoPagoId": "{{metodoPagoId}}",
+    "entidadFinancieraNombre": "Bancolombia",
+    "creadoPorId": "{{membershipId}}",
+    "liquidadoPorId": "{{membershipId}}",
+    "estadoServicio": "PENDIENTE",
+    "estadoPago": "PENDIENTE",
+    "fechaVisita": "2026-03-20T14:00:00.000Z",
+    "horaInicio": "2026-03-20T14:00:00.000Z",
+    "horaInicioReal": "2026-03-20T14:10:00.000Z",
+    "horaFinReal": "2026-03-20T15:00:00.000Z",
+    "duracionMinutos": 50,
+    "facturaElectronica": "",
+    "comprobantePago": "",
+    "evidenciaPath": "",
+    "valorPagado": 0,
+    "observacionFinal": "",
+    "referenciaPago": "",
+    "fechaPago": "2026-03-20T15:30:00.000Z",
+    "desglosePago": [
+      {
+        "metodo": "EFECTIVO",
+        "valor": 180000
+      }
+    ]
+  }
+}

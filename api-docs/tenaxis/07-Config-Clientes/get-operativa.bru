@@ -1,0 +1,15 @@
+meta {
+  name: Get Operativa Configs
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/config-clientes/operativa/{{clienteId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
